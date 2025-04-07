@@ -1,9 +1,11 @@
-# About
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
+# 👋 Hello! I’m **Ranjung Yeshi Norbu**  
 
-::github{repo="saicaca/fuwari"}
+🎓 A passionate and driven student pursuing my education at the **College of Science and Technology**.  
+🔒 My curiosity and enthusiasm lie in the ever-evolving field of **cybersecurity**, where I aspire to deepen my knowledge and contribute to safeguarding digital landscapes.  
 
-> ### Sources of images used in this site
-> - [Unsplash](https://unsplash.com/)
-> - [星と少女](https://www.pixiv.net/artworks/108916539) by [Stella](https://www.pixiv.net/users/93273965)
-> - [Rabbit - v1.4 Showcase](https://civitai.com/posts/586908) by [Rabbit_YourMajesty](https://civitai.com/user/Rabbit_YourMajesty)
+🚀 I’m constantly eager to:  
+- Learn **new skills** and **emerging technologies**,  
+- Tackle challenges that push me to grow **academically** and **professionally**,  
+- Innovate with a commitment to **excellence** and **impact**.  
+
+🌐 I look forward to expanding my expertise and making meaningful strides in tech. **Let’s connect and embark on this exciting journey together!**  
