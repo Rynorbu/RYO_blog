@@ -8,169 +8,155 @@ category: Hack the box
 draft: false
 ---
 
-# **Ping**
+# Dark Crop
 
-I verified whether I could communicate or if the IP address was up.
+**Ping**
 
-![ping](../../assets/Dark_crop/image.png)
+I verified whether I could communicate or if the IP address was up. 
+
+![image.png](../../assets/Dark_crop/image.png)
 
 The IP address is up. Now I can communicate with the IP address.
 
----
-
-# **Nmap**
+**Nmap**
 
 Then used Nmap to 
 
-![Nmap](../../assets/Dark_crop/image(1).png)
+![image.png](../../assets/Dark_crop/image%201.png)
 
-![Nmap 2](../../assets/Dark_crop/image(2).png)
+![image.png](../../assets/Dark_crop/image%202.png)
 
-## - **Version detection scan**
+- **Version detection scan**
 
-![Nmap Version Scan](../../assets/Dark_crop/image(3).png)
+![image.png](../../assets/Dark_crop/image%203.png)
 
-### **Result**
+**Result**
 
 There are two open ports:
+
 - 22 ssh and,
-- 80 http
+- 80 hhtp
 
----
-
-# **Web enumeration**
+### **Web enumeration**
 
 I used wappalyzer extension to find the framework the website used.
 
-![Wappalyzer](../../assets/Dark_crop/image(4).png)
+![image.png](../../assets/Dark_crop/image%204.png)
 
-## **Whatweb**
+**Whatweb**
 
-Upon researching I found the tool called *whatweb* that also detects the framework used same like the wappalyzer.
+Upon researching I found the tool called *whatweb* that also detects the framework used same like the wappplyzer.
 
 [whatweb | Kali Linux Tools](https://www.kali.org/tools/whatweb/)
 
-![Whatweb 1](../../assets/Dark_crop/image(5).png)
+![image.png](../../assets/Dark_crop/image%205.png)
 
-![Whatweb 2](../../assets/Dark_crop/image(6).png)
+![image.png](../../assets/Dark_crop/image%206.png)
 
-### **Result**
+**Result**
 
 I found that the website used:
+
 - The web server used is nginx version 1.22.1.
-- Used Bootstrap for front-end.
+- Used Bootstrap for frond-end
 
-Then I checked the vulnerability of nginx 1.22.1 in exploit database, but I found nothing.
+Then I checked the vulnerability of ngnix 1.22.1 in exploit database, but i found nothing.
 
-![Exploit DB](../../assets/Dark_crop/image(7).png)
+![image.png](../../assets/Dark_crop/image%207.png)
 
----
+Then I searched the IP address and I was navigated to the drip.htb and this error appeared
 
-Then I searched the IP address and I was navigated to the drip.htb and this error appeared:
+![image.png](../../assets/Dark_crop/image%208.png)
 
-![drip.htb error](../../assets/Dark_crop/image(8).png)
+DNS resolution is not setup in **etc/hosts** file. Now let's resolve the DNS resolution using vim(text editor).
 
-DNS resolution is not setup in **/etc/hosts** file. Now let's resolve the DNS resolution using vim (text editor).
+![image.png](../../assets/Dark_crop/image%209.png)
 
-![Editing hosts](../../assets/Dark_crop/image(9).png)
+![image.png](../../assets/Dark_crop/image%2010.png)
 
-![hosts file updated](../../assets/Dark_crop/image(9).png)
+After solving the DNS resolution I was directed to the /index directory and got this page
 
-After solving the DNS resolution I was directed to the `/index` directory and got this page:
+![image.png](../../assets/Dark_crop/image%2011.png)
 
-![index page](../../assets/Dark_crop/image(10).png)
+I navigated to the sign-in page and then found this
 
-I navigated to the sign-in page and then found this:
+![image.png](../../assets/Dark_crop/image%2012.png)
 
-![sign-in page](../../assets/Dark_crop/image(11).png)
+I was then navigated to the mail.drip.htb
 
-I was then navigated to the **mail.drip.htb**
+Same like the drip.htb error I resolve the DNS by editing the /etc/hosts
 
-Same like the drip.htb error, I resolved the DNS by editing the **/etc/hosts** file.
+![image.png](../../assets/Dark_crop/image%2013.png)
 
-![editing hosts again](../../assets/Dark_crop/image(12).png)
+![image.png](../../assets/Dark_crop/image%2014.png)
 
-![hosts updated](../../assets/Dark_crop/image(13).png)
+Then I was able to find the page and I found this login page.
 
-Then I was able to find the page and I found this login page:
+![image.png](../../assets/Dark_crop/image%2015.png)
 
-![mail login](../../assets/Dark_crop/image(14).png)
+I then used ffuf to brute force the directory 
 
----
+![image.png](../../assets/Dark_crop/image%2016.png)
 
-I then used **ffuf** to brute force the directory:
-
-![ffuf](../../assets/Dark_crop/image(15).png)
-
-### **Result**
+**Result** 
 
 - Found mail.
 
 This mail subdomain was already found when I navigated to the sign-in page.
 
-![mail subdomain](../../assets/Dark_crop/image(16).png)
+![image.png](../../assets/Dark_crop/image%2017.png)
 
-### **Result**
+**Result** 
 
-- Found contact  
-- index.html  
+- Found contact
+- index.html
 - register
 
----
+I have registered as a user to find out what the website is about
 
-I have registered as a user to find out what the website is about:
+![image.png](../../assets/Dark_crop/image%2018.png)
 
-![registration](../../assets/Dark_crop/image(17).png)
+after signing in I found this page
 
-After signing in I found this page:
+![image.png](../../assets/Dark_crop/image%2019.png)
 
-![mail user page](../../assets/Dark_crop/image(18).png)
+- The page is mainly about the mails
 
-- The page is mainly about the mails.
+Then I was stuck here then I backtracked it and I again gathered information.
 
----
+**Enumeration**
 
-Then I was stuck here so I backtracked it and again gathered information.
+**WPScan**
 
----
-
-# **Enumeration**
-
-## **WPScan**
-
-I browsed the tools that are used to scan the subdomains and I found this WPScan.
+I browsed the tools that are used to scan the subdomains and I found this Wpscan.
 
 - WPScan is used for searching for vulnerabilities, such as weak passwords and outdated plugins.
 
-![wpscan](../../assets/Dark_crop/image(20).png)
+![image.png](../../assets/Dark_crop/image%2020.png)
 
 I was not able to get the result because the website is not running on WordPress.
 
 - I understood that the WPScan is used for the website using WordPress.
 
----
+**ferric oxide**
 
-## **Ferric Oxide**
+ I then found a tool called ferric oxide 
 
-I then found a tool called Ferric Oxide.
+![image.png](../../assets/Dark_crop/image%2021.png)
 
-![ferric oxide](../../assets/Dark_crop/image(21).png)
-
-### **Result**
+**Result**
 
 - Found only two 200 status code. Both are the same. It is the landing page.
 
----
+Nikto
 
-## **Nikto**
+- Nikto scans for insecure files and programs.
 
-Nikto scans for insecure files and programs.
+![image.png](../../assets/Dark_crop/image%2022.png)
 
-![nikto](../../assets/Dark_crop/image(19).png)
+**Result**
 
-### **Result**
-
-I have found that the **X-Content-Type-Options** header is not set.
+I have found that the X-Content-Type-Options header is not set.
 
 - This could allow browsers to interpret files in unintended ways, leading to security issues like MIME-type sniffing attacks.
-- Found multiple index files: `/index.php`, `/index.asp`, `/index.html`, `/default.aspx`, etc.
+- Found multiple index files: /index.php, /index.asp, /index.html, /default.aspx, etc.
