@@ -53,7 +53,7 @@ export const navBarConfig: NavBarConfig = {
 export const profileConfig: ProfileConfig = {
   avatar: 'assets/images/my_photo.jpg',  // Relative to the /src directory. Relative to the /public directory if it starts with '/'
   name: 'Ranjung Yeshi Norbu',
-  bio: 'Learn CyberSecurity and enjoy reading!!',
+  bio: 'One single vulnerability is all an attacker needs.',
   links: [
     {
       name: 'HackTheBox',
