@@ -16,8 +16,7 @@ draft: false
 ---
 
 ## History
-- **1970**: Unix OS created (AT&T).
-- **1977**: BSD released (legal issues due to Unix code).
-- **1983**: GNU project started (goal: free Unix-like OS + GPL license).
-- **1991**: Linus Torvalds created Linux kernel (now 23M+ lines of code!).
-- **Today**: 600+ distros (e.g., Ubuntu, RedHat). Android runs on Linux kernel.
+- **Unix (1970s):** Linux is based on an older OS called **Unix**, created by Ken Thompson and Dennis Ritchie at AT&T.
+- **GNU Project (1983):** Richard Stallman wanted to make a **free Unix-like OS**, leading to the creation of the **GNU General Public License (GPL)**.
+- **Linux Kernel (1991):** Linus Torvalds, a Finnish student, built the **Linux kernel**, the core part of Linux.
+- **Linux Today:** Linux is used everywhere—from servers to Android phones. There are **over 600 distros** like Ubuntu, Fedora, and RedHat.
