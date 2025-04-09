@@ -2,7 +2,7 @@
 title: Titanic
 published: 2025-02-22
 description: "How to use this blog template."
-# image: "../../assets/images/my_photo.jpg"
+image: "../../assets/Titanic/cover.png"
 tags: ["Cyber"]
 category: Hack the box
 draft: false

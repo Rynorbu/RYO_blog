@@ -7,7 +7,7 @@ import type {
 import { LinkPreset } from './types/config'
 
 export const siteConfig: SiteConfig = {
-  title: 'Ranjung Yeshi Norbu',
+  title: 'RYO Blog',
   subtitle: 'RYO Blog!! Learn cybersecurity',
   lang: 'en',         // 'en', 'zh_CN', 'zh_TW', 'ja', 'ko', 'es', 'th'
   themeColor: {

@@ -2,7 +2,7 @@
 title: Link Vortex
 published: 2025-02-22
 description: "How to use this blog template."
-# image: "../../assets/images/my_photo.jpg"
+image: "../../assets/Link_vortex/cover.jpg"
 tags: ["Cyber"]
 category: Hack the box
 draft: false

@@ -2,7 +2,7 @@
 title: Dark Crop
 published: 2025-02-19
 description: "How to use this blog template."
-# image: "../../assets/images/my_photo.jpg"
+image: "../../assets/Dark_crop/DarkCorp.png"
 tags: ["Cyber"]
 category: Hack the box
 draft: false
