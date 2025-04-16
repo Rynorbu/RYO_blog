@@ -1,10 +1,9 @@
 ---
-title: Navigation
+title: Performance
 published: 2025-08-03
 description: "How to use this blog template."
-<!-- # image: "../../assets/images/my_photo.jpg" -->
 tags: ["Cyber"]
-category: Linux
+category: Nmap
 draft: false
 ---
 
@@ -43,10 +42,6 @@ sudo nmap 10.129.2.0/24 -F --initial-rtt-timeout 50ms --max-rtt-timeout 100ms
 
 ### Default Scan
 
-bash
-
-Copy
-
 ```
 sudo nmap 10.129.2.0/24 -F | grep "/tcp" | wc -l
 ```
@@ -54,10 +49,6 @@ sudo nmap 10.129.2.0/24 -F | grep "/tcp" | wc -l
 - **Results**: 23 open ports found
 
 ### Reduced Retries Scan
-
-bash
-
-Copy
 
 ```
 sudo nmap 10.129.2.0/24 -F --max-retries 0 | grep "/tcp" | wc -l
@@ -70,10 +61,6 @@ sudo nmap 10.129.2.0/24 -F --max-retries 0 | grep "/tcp" | wc -l
 
 ### Default Scan
 
-bash
-
-Copy
-
 ```
 sudo nmap 10.129.2.0/24 -F -oN tnet.default
 ```
@@ -81,10 +68,6 @@ sudo nmap 10.129.2.0/24 -F -oN tnet.default
 - **Results**: 29.83 seconds
 
 ### Optimized Rate Scan
-
-bash
-
-Copy
 
 ```
 sudo nmap 10.129.2.0/24 -F -oN tnet.minrate300 --min-rate 300
@@ -107,10 +90,6 @@ Nmap provides six timing templates:
 
 ### Default Timing (-T3)
 
-bash
-
-Copy
-
 ```
 sudo nmap 10.129.2.0/24 -F -oN tnet.default
 ```
@@ -118,10 +97,6 @@ sudo nmap 10.129.2.0/24 -F -oN tnet.default
 - **Results**: 32.44 seconds
 
 ### Insane Timing (-T5)
-
-bash
-
-Copy
 
 ```
 sudo nmap 10.129.2.0/24 -F -oN tnet.T5 -T5
